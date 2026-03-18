@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Karnatrick — Carnatic Music, Reimagined</title>
+  <meta name="description" content="Apps for Carnatic musicians. Practice, challenge, and explore.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold: #C9A84C;
+      --gold-dim: rgba(201,168,76,0.15);
+      --white: #F5F0E8;
+      --grey: rgba(245,240,232,0.45);
+      --bg: #0A0A0A;
+    }
+
+    html, body {
+      height: 100%;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100svh;
+      padding: 48px 24px;
+      gap: 0;
+    }
+
+    /* Subtle radial glow */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 40%, rgba(201,168,76,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(48px, 10vw, 80px);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1;
+      color: var(--white);
+      position: relative;
+    }
+
+    .wordmark span {
+      color: var(--gold);
+    }
+
+    .tagline {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--gold-dim);
+      margin: 48px auto;
+    }
+
+    .apps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      width: 100%;
+      max-width: 360px;
+    }
+
+    .app-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 24px;
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px;
+      background: rgba(201,168,76,0.04);
+      text-decoration: none;
+      color: var(--white);
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .app-card:hover {
+      border-color: rgba(201,168,76,0.5);
+      background: rgba(201,168,76,0.08);
+    }
+
+    .app-info {}
+
+    .app-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .app-desc {
+      font-size: 12px;
+      font-weight: 400;
+      color: var(--grey);
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    .app-arrow {
+      color: var(--gold);
+      font-size: 18px;
+      opacity: 0.7;
+      flex-shrink: 0;
+      margin-left: 16px;
+    }
+
+    .coming-soon .app-name,
+    .coming-soon .app-arrow { opacity: 0.35; }
+    .coming-soon .app-desc { opacity: 0.25; }
+    .coming-soon { cursor: default; pointer-events: none; }
+
+    .badge {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: var(--gold-dim);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 2px 7px;
+      margin-left: 10px;
+      vertical-align: middle;
+      position: relative;
+      top: -1px;
+    }
+
+    .footer {
+      margin-top: 64px;
+      font-size: 12px;
+      color: rgba(245,240,232,0.2);
+      letter-spacing: 0.06em;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wordmark">Karnat<span>rick</span></div>
+  <p class="tagline">Carnatic Music, Reimagined</p>
+
+  <div class="divider"></div>
+
+  <div class="apps">
+    <a class="app-card" href="/raga-challenge/">
+      <div class="app-info">
+        <div class="app-name">Raga Challenge <span class="badge">Live</span></div>
+        <div class="app-desc">Spin the wheel. Sing the raga. Beat the clock.</div>
+      </div>
+      <div class="app-arrow">→</div>
+    </a>
+
+    <div class="app-card coming-soon">
+      <div class="app-info">
+        <div class="app-name">More coming <span class="badge">Soon</span></div>
+        <div class="app-desc">Practice tools, ear training, and more.</div>
+      </div>
+      <div class="app-arrow">→</div>
+    </div>
+  </div>
+
+  <p class="footer">© 2025 Karnatrick</p>
+
+</body>
+</html>
